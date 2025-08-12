@@ -1,12 +1,12 @@
 FROM alpine:latest
 
 USER root
-run adduser terraform
+RUN adduser -G terraform -h /home/terraform -D terraform
 
 RUN apk add curl unzip
 RUN mkdir -p /opt/terraform
 
-ARG TERRAFORM_VERSION=1.9.2
+ARG TERRAFORM_VERSION=1.12.2
 RUN apk update && \
     curl -LOs https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
