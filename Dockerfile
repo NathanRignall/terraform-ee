@@ -27,11 +27,11 @@ RUN echo "Adding terraform-provider-openstack/openstack v${OPENSTACK_PROVIDER_VE
 ARG CLOUDINIT_PROVIDER_VERSION=2.3.7
 RUN echo "Adding hashicorp/cloudinit v${CLOUDINIT_PROVIDER_VERSION}" \
     && mkdir -p hashicorp/cloudinit && cd hashicorp/cloudinit \
-    && curl -LOs https://github.com/hashicorp/terraform-provider-cloudinit/archive/refs/tags/v${CLOUDINIT_PROVIDER_VERSION}.zip
+    && curl -LOs https://github.com/hashicorp/terraform-provider-cloudinit/archive/refs/tags/cloudinit_${CLOUDINIT_PROVIDER_VERSION}_linux_amd64.zip
 ARG NULL_PROVIDER_VERSION=2.3.7
 RUN echo "Adding hashicorp/null v${NULL_PROVIDER_VERSION}" \
     && mkdir -p hashicorp/null && cd hashicorp/null \
-    && curl -LOs https://github.com/hashicorp/terraform-provider-null/archive/refs/tags/v${NULL_PROVIDER_VERSION}.zip
+    && curl -LOs https://github.com/hashicorp/terraform-provider-null/archive/refs/tags/null_${NULL_PROVIDER_VERSION}_linux_amd64.zip
 RUN chown -R terraform:terraform /opt/terraform/plugins
 WORKDIR /home/terraform
 
