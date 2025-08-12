@@ -20,7 +20,7 @@ ADD filesystem-mirror-example.tfrc /opt/terraform/config.tfrc
 
 RUN mkdir -p /opt/terraform/plugins/registry.terraform.io
 WORKDIR /opt/terraform/plugins/registry.terraform.io
-ARG OPENSTACK_PROVIDER_VERSION=1.54.1
+ARG OPENSTACK_PROVIDER_VERSION=3.3.2
 RUN echo "Adding openstack/openstack v${OPENSTACK_PROVIDER_VERSION}" \
     && mkdir -p openstack/openstack && cd openstack/openstack \
     && curl -LOs https://releases.hashicorp.com/terraform-provider-openstack/${OPENSTACK_PROVIDER_VERSION}/terraform-provider-openstack_${OPENSTACK_PROVIDER_VERSION}_linux_amd64.zip
