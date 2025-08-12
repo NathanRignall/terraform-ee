@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 USER root
+RUN addgroup terraform
 RUN adduser -G terraform -h /home/terraform -D terraform
 
 RUN apk add curl unzip
